@@ -1,0 +1,16 @@
+<div class="esercizio1">
+  <h3>Esempio di *ngIf</h3>
+
+  <button (click)="toggle()">
+    {{ show ? 'Nascondi' : 'Mostra' }} messaggio
+  </button>
+
+  <!-- *ngIf con else che punta a un ng-template alternativo -->
+  <div *ngIf="show">
+    <p><strong>Messaggio principale:</strong> {{ message }}</p>
+    <label>
+      Modifica messaggio:
+      <input type="text" [value]="message" (input)="message = $any($event.target).value" />
+    </label>
+  </div>
+</div>
